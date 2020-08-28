@@ -24,6 +24,7 @@
 #include <crypto/xts.h>
 #include <crypto/b128ops.h>
 #include <crypto/gf128mul.h>
+#include <stdlib.h>
 
 struct priv {
 	struct crypto_cipher *child;
