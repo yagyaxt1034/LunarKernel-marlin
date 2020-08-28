@@ -4626,12 +4626,12 @@ static void dequeue_task_fair(struct rq *rq, struct task_struct *p, int flags)
 		 * trigger as single request after load balancing is
 		 * done.
 		 */
-		if (task_sleep) {
-			if (rq->cfs.nr_running)
-				update_capacity_of(cpu_of(rq), true);
-			else if (sched_freq())
-				update_capacity_of(cpu_of(rq), false);
-		}
+	if (task_sleep) {
+		if (rq->cfs.nr_running)
+			update_capacity_of(cpu_of(rq), true);
+		else if (sched_freq())
+			update_capacity_of(cpu_of(rq), false);
+	}
 
 	/* Get the top level CFS RQ for the task CPU */
 	cfs_rq = &(task_rq(p)->cfs);
